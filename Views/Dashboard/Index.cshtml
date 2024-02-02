@@ -1,0 +1,94 @@
+﻿@*To remove breadcrumb component on Dashboard*@
+@{
+    ViewData["isDashboard"] = true;
+}
+
+@*Summary Widgets*@
+
+<div class="row centerDashWidget fw-bold" mb-4>
+    <h2 class="fw-bold centerTextWidget mb-4 moveUp">History Last 30 Days</h2>
+    <div class="col-md-3">
+        <div class="d-flex flex-row widget summary income">
+            <div class="d-flex flex-column m-auto py-3">
+                <span class="lead centerTextWidget">Total Income</span>
+                <h1 class="display-6 fw-bold">@ViewBag.TotalIncome</h1>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="d-flex flex-row widget summary expense">
+            <div class="d-flex flex-column m-auto py-3">
+                <span class="lead centerTextWidget">Total Expense</span>
+                <h1 class="display-6 fw-bold">@ViewBag.TotalExpense</h1>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="d-flex flex-row widget summary balance">
+            <div class="d-flex flex-column m-auto py-3">
+                <span class="lead centerTextWidget">Balance</span>
+                <h1 class="display-6 fw-bold">@ViewBag.Balance</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+@*Donut - Expense by Category*@
+<div class="row mb-12 d-flex justify-content-center">
+    <div class="col-md-4">
+        <div class="widget">
+            <div class="p-4">
+                <h5 class="fw-bold centerTextWidget">Expense by Category</h5>
+            </div>
+            <ejs-accumulationchart id="donutchart" enableSmartLabels>
+                <e-accumulation-series-collection>
+                    <e-accumulation-series dataSource="@ViewBag.DonutChartData" xName="categoryTitleWithIcon" yName="amount" innerRadius="60%" legendShape="Circle">
+                        <e-accumulationseries-datalabel name="formattedAmount" visible="true"></e-accumulationseries-datalabel>
+                    </e-accumulation-series>
+                </e-accumulation-series-collection>
+                <e-accumulationchart-legendsettings>
+                    <e-legendsettings-textstyle color="#fff" size="1rem"></e-legendsettings-textstyle>
+                </e-accumulationchart-legendsettings>
+                <e-accumulationchart-tooltipsettings enable></e-accumulationchart-tooltipsettings>
+            </ejs-accumulationchart>
+        </div>
+    </div>
+    @*Donut - Income by Category*@
+    <div class="col-md-4">
+        <div class="widget">
+            <div class="p-4">
+                <h5 class="fw-bold centerTextWidget">Income by Category</h5>
+            </div>
+            <ejs-accumulationchart id="donutchartTwo" enableSmartLabels>
+                <e-accumulation-series-collection>
+                    <e-accumulation-series dataSource="@ViewBag.DonutChartDataTwo" xName="categoryTitleWithIcon" yName="amount" innerRadius="60%" legendShape="Circle">
+                        <e-accumulationseries-datalabel name="formattedAmount" visible="true"></e-accumulationseries-datalabel>
+                    </e-accumulation-series>
+                </e-accumulation-series-collection>
+                <e-accumulationchart-legendsettings>
+                    <e-legendsettings-textstyle color="#fff" size="1rem"></e-legendsettings-textstyle>
+                </e-accumulationchart-legendsettings>
+                <e-accumulationchart-tooltipsettings enable></e-accumulationchart-tooltipsettings>
+            </ejs-accumulationchart>
+        </div>
+    </div>
+    @*List - Recent Transactions*@
+    <div class="col-md-4 ">
+        <div class="widget paddingTransactions">
+            <div class="p-4">
+                <h5 class="fw-bold centerTextWidget">Recent Transactions</h5>
+            </div>
+            <div class="px-4 pb-4">
+                <ejs-grid id="GridTransactions" dataSource="@ViewBag.RecentTransactions" gridLines="None" allowSorting="true" allowPaging="true">
+                    <e-grid-pagesettings pageSize="7"></e-grid-pagesettings>
+                    <e-grid-columns>
+                        <e-grid-column headerText="Category" field="CategoryTitleWithIcon"></e-grid-column>
+                        <e-grid-column headerText="Date" field="Date"type="date" format="MMM-dd-yy" textAlign="Left"></e-grid-column>
+                        <e-grid-column headerText="Amount" field="FormattedAmount" textAlign="Left"></e-grid-column>
+                    </e-grid-columns>
+                </ejs-grid>
+            </div>
+        </div>
+    </div>
+</div>
+

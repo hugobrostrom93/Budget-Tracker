@@ -1,0 +1,59 @@
+﻿@{
+}
+
+<ejs-sidebar id="sidebar" width="290px">
+    <e-content-template>
+        <div class="sidebar-logo">
+            <div style="display:inline-block">
+                <a class="navbar-brand" asp-area="" asp-controller="Dashboard" asp-action="">
+                    <img src="~/sbLogo.png" alt="BudgetTracker Logo" />
+                </a>
+            </div>
+        </div>
+        <div class="sideBarLinksContainer">
+            <div class="sideBarLinkItem">
+                <a class="sideBarLinks" asp-area="" asp-controller="Dashboard" asp-action="">
+                    <i class="fa-solid fa-earth-americas fa-1xl sideLink1"></i> Dashboard
+                </a>
+            </div>
+            <div class="sideBarLinkItem">
+                <a class="sideBarLinks" asp-area="" asp-controller="Transaction" asp-action="Index">
+                    <i class="fa-solid fa-money-bill-transfer fa-1xl sideLink2"></i> Transactions
+                </a>
+            </div>
+            <div class="sideBarLinkItem">
+                <a class="sideBarLinks" asp-area="" asp-controller="Category" asp-action="Index">
+                    <i class="fa-solid fa-shapes fa-1xl sideLink3"></i> Categories
+                </a>
+            </div>
+
+
+            <div>
+                @if (Context.User.Identity.IsAuthenticated)
+                {
+                    <div class="mt-5">
+                        <a class="sideBarLinksTwo" asp-area="" asp-controller="Account" asp-action="Logout">
+                            <i class="fa-solid fa-right-to-bracket fa-1xl sideLink1"></i> Logout
+                        </a>
+                    </div>
+                }
+                else
+                {
+                    <div class="mt-5">
+                        <a class="sideBarLinksTwo" asp-area="" asp-controller="Account" asp-action="Login">
+                            <i class="fa-solid fa-right-to-bracket fa-1xl sideLink1"></i> Login
+                        </a>
+                    </div>
+                }
+
+                <div class="mt-1">
+                    <a class="sideBarLinksTwo" asp-area="" asp-controller="Account" asp-action="SecretInfo">
+                        <i class="fa-solid fa-gear fa-1xl sideLink1"></i> Settings
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </e-content-template>
+</ejs-sidebar>
+
