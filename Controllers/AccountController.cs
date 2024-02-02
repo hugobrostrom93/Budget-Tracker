@@ -34,30 +34,6 @@ public class AccountController : Controller
         return View();
     }
 
-    //[HttpPost]
-    //[ValidateAntiForgeryToken] // This ensures that the form is submitted with a valid anti-forgery token to prevent CSRF attacks.
-    //public async Task<IActionResult> LoginAsync(LoginViewModel model)
-    //{
-    //    // Check model validators
-    //    if (!ModelState.IsValid)
-    //    {
-    //        return View(model);
-    //    }
-    //    // Mocked user verification
-    //    if (model.Username == MockedUsername && model.Password == MockedPassword)
-    //    {
-    //        // Set up the session/cookie for the authenticated user.
-    //        var claims = new[] { new Claim(ClaimTypes.Name, model.Username) };
-    //        var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
-    //        var principal = new ClaimsPrincipal(identity);
-    //        await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal);
-    //        // Normally, here you'd set up the session/cookie for the authenticated user.
-    //        return RedirectToAction("Index", "Dashboard"); // Redirect to a secure area of your application.
-    //    }
-    //    ModelState.AddModelError(string.Empty, "Invalid login attempt."); // Generic error message for security reasons.
-    //    return View(model);
-    //}
-
     [HttpPost]
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> LoginAsync(LoginViewModel model)
@@ -105,26 +81,4 @@ public class AccountController : Controller
         // or to find an existing user.
         return RedirectToAction("Index", "Dashboard");
     }
-
-    //public async Task GoogleLoginTwo()
-    //{
-    //    await HttpContext.ChallengeAsync(GoogleDefaults.AuthenticationScheme, new AuthenticationProperties
-    //    {
-    //        RedirectUri = Url.Action(/*"GoogleLoginCallback", "Account"*/"GoogleResponse")
-    //    });
-    //}
-    //public async Task<IActionResult> GoogleResponse()
-    //{
-    //    var result = await HttpContext.AuthenticateAsync(CookieAuthenticationDefaults.AuthenticationScheme);
-
-    //    var claims = result.Principal.Identities.FirstOrDefault().Claims.Select(claim => new
-    //    {
-    //        claim.Issuer,
-    //        claim.OriginalIssuer,
-    //        claim.Type,
-    //        claim.Value
-    //    });
-
-    //    return RedirectToAction("Index", "Dashboard");
-    //}
 }

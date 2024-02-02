@@ -29,6 +29,7 @@ namespace BudgetTrackerHugo.Controllers
         }
 
         // GET: Category/AddOrEdit
+        [Authorize]
         public IActionResult AddOrEdit(int id = 0)
         {
             if (id == 0)

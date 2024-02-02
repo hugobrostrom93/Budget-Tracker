@@ -1,4 +1,4 @@
-﻿@model BudgetTrackerHugo.Models.LoginViewModel
+﻿@*@model BudgetTrackerHugo.Models.LoginViewModel
 @{
     ViewData["isDashboard"] = true;
 }
@@ -27,3 +27,140 @@
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
     }
+*@
+
+@model BudgetTrackerHugo.Models.LoginViewModel
+@{
+    Layout = "_HomeLayout";
+    ViewData["Title"] = "Budget Tracker";
+}
+@*@model IEnumerable<BudgetTrackerHugo.Models.LoginViewModel>*@
+
+<div class="login-container">
+    <img src="~/sbLogo.png" alt="BudgetTracker Logo" />
+    <h2>LogIn to your account</h2>
+    <p>Start traking your economy with <b>SmartBudget</b></p>
+    <form asp-action="Login" asp-controller="Account" method="post" asp-antiforgery="true">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div>
+            <label asp-for="Username">Username:</label>
+            <input type="text" id="Username" asp-for="Username" required />
+            <span asp-validation-for="Username" class="text-danger"></span>
+        </div>
+        <div>
+            <label asp-for="Password">Password:</label>
+            <input type="password" id="Password" asp-for="Password" required />
+            <span asp-validation-for="Password" class="text-danger"></span>
+        </div>
+        <div>
+            <button type="submit" class="buttonLogInOne">Login</button>
+            <a href="@Url.Action("GoogleLogin", "Account")" class="login-btn btn btn-primary">
+                Login with Google
+                <img src="~/30pxGoogle.png" alt="Google Logo" style="width: 20px; height: 20px; margin-left: 5px; margin-top:10px; vertical-align: middle;" />
+            </a>
+        </div>
+    </form>
+</div>
+
+<style>
+    body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+        background-color: black !important;
+    }
+
+    .login-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 5rem;
+        border-radius: 10px;
+        background-color: #0e141f;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+        .login-container img {
+            margin-top: -30px;
+            max-width: 100%;
+            margin-bottom: 1rem;
+        }
+
+        .login-container p {
+            margin-top: -10px;
+            margin-bottom: 40px;
+            text-align: center;
+            font-family: 'Inter', sans-serif; /* Set font family */
+            color: #fff;
+        }
+
+        .login-container h2 {
+            text-align: center;
+            font-family: 'Inter', sans-serif; /* Set font family */
+            color: #fff;
+        }
+
+        .login-container form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .login-container label {
+            color: #fff;
+            font-family: 'Inter', sans-serif !important; /* Set font family */
+            font-size: 16px; /* Set font size */
+        }
+
+        .login-container input {
+            width: 100%;
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            color: #333; /* Set text color */
+            font-family: 'Inter', sans-serif !important; /* Set font family */
+            font-size: 16px; /* Set font size */
+        }
+
+        .login-container button {
+            padding: 0.5rem 1rem;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif; /* Set font family */
+            font-size: 16px; /* Set font size */
+        }
+
+    .buttonLogInOne {
+        margin-top: 20px;
+        padding-top: 12.5px !important;
+        padding-bottom: 15px !important;
+    }
+
+        .buttonLogInOne:hover {
+            background-color: #0069d9;
+        }
+
+    .login-btn {
+        padding: 0rem 1rem;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-family: 'Inter', sans-serif;
+        font-size: 16px;
+        text-decoration: none; /* Remove underline for anchor elements */
+        display: inline-block;
+        text-align: center;
+    }
+
+        .login-btn:hover {
+            background-color: #0069d9;
+        }
+</style>

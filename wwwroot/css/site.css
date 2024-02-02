@@ -245,3 +245,11 @@ body {
 .paddingTransactions {
     padding-bottom: 1.2rem;
 }
+
+.incomeText {
+    color: #198754;
+}
+
+.expenseText {
+    color: #dc3545;
+}
