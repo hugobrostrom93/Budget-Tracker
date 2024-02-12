@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "eiR0vQcNSLUuYJu2cBWBiPzBudDawBYUMEPM0eRtxrzbP7oUO9eHSvU+eKvx1ijw06IJhsRlrCnTiOwt6QIvVw==",
+  "dgSpecHash": "a63uTosKQZ+rO/pzEjr13rYT49rJfz6MdmydCh3DoE7akmHyIN9DFwRVCdUlG5kCBbt090Fw31HGcf2sl501Rg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Hugo\\Desktop\\Cloud\\BudgetTrackerHugo\\BudgetTrackerHugo\\BudgetTrackerHugo.csproj",
   "expectedPackageFiles": [
@@ -32,6 +32,7 @@
     "C:\\Users\\Hugo\\.nuget\\packages\\microsoft.identitymodel.protocols.openidconnect\\6.8.0\\microsoft.identitymodel.protocols.openidconnect.6.8.0.nupkg.sha512",
     "C:\\Users\\Hugo\\.nuget\\packages\\microsoft.identitymodel.tokens\\6.8.0\\microsoft.identitymodel.tokens.6.8.0.nupkg.sha512",
     "C:\\Users\\Hugo\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
+    "C:\\Users\\Hugo\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.17.0\\microsoft.visualstudio.azure.containers.tools.targets.1.17.0.nupkg.sha512",
     "C:\\Users\\Hugo\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\Hugo\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
     "C:\\Users\\Hugo\\.nuget\\packages\\newtonsoft.json\\13.0.2\\newtonsoft.json.13.0.2.nupkg.sha512",
