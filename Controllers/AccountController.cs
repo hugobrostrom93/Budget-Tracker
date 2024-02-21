@@ -84,27 +84,27 @@ public class AccountController : Controller
         return View(model);
     }
 
-    public IActionResult GoogleLogin()
-    {
-        var authProperties = new AuthenticationProperties
-        {
-            RedirectUri = Url.Action("GoogleLoginCallback", "Account")
-        };
-        return Challenge(authProperties, GoogleDefaults.AuthenticationScheme);
-    }
+    //public IActionResult GoogleLogin()
+    //{
+    //    var authProperties = new AuthenticationProperties
+    //    {
+    //        RedirectUri = Url.Action("GoogleLoginCallback", "Account")
+    //    };
+    //    return Challenge(authProperties, GoogleDefaults.AuthenticationScheme);
+    //}
 
-    public async Task<IActionResult> GoogleLoginCallbackAsync()
-    {
-        var result = await HttpContext.AuthenticateAsync(CookieAuthenticationDefaults.AuthenticationScheme);
-        if (!result.Succeeded)
-        {
-            // Handle failure: return to the login page, show an error, etc.
-            return RedirectToAction("Home");
-        }
-        // Here, you could fetch information from result.Principal to store in your database,
-        // or to find an existing user.
-        return RedirectToAction("Index", "Dashboard");
-    }
+    //public async Task<IActionResult> GoogleLoginCallbackAsync()
+    //{
+    //    var result = await HttpContext.AuthenticateAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+    //    if (!result.Succeeded)
+    //    {
+    //        // Handle failure: return to the login page, show an error, etc.
+    //        return RedirectToAction("Home");
+    //    }
+    //    // Here, you could fetch information from result.Principal to store in your database,
+    //    // or to find an existing user.
+    //    return RedirectToAction("Index", "Dashboard");
+    //}
 
     //public async Task GoogleLoginTwo()
     //{

@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
     "",
+    "\\Controllers",
     "\\wwwroot"
   ],
+  "SelectedNode": "\\Controllers\\AccountController.cs",
   "PreviewInSolutionExplorer": false
 }

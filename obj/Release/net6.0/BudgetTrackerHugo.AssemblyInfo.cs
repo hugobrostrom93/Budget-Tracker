@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BudgetTrackerHugo")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5b39a4c3ff85e2794ba773cc5905d79f8b2a97f0")]
 [assembly: System.Reflection.AssemblyProductAttribute("BudgetTrackerHugo")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BudgetTrackerHugo")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
