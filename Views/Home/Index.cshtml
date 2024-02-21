@@ -7,7 +7,7 @@
 
 <div class="login-container">
     <img src="~/sbLogo.png" alt="BudgetTracker Logo" />
-    <h2>LogIn to your account AAAA</h2>
+    <h2>LogIn to your account</h2>
     <p>Start traking your economy with <b>SmartBudget</b></p>
     <form asp-action="Login" asp-controller="Account" method="post" asp-antiforgery="true">
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -23,10 +23,10 @@
         </div>
         <div>
             <button type="submit" class="buttonLogInOne">Login</button>
-            <a href="@Url.Action("GoogleLogin", "Account")" class="login-btn btn btn-primary">
+@*             <a href="@Url.Action("GoogleLogin", "Account")" class="login-btn btn btn-primary">
                 Login with Google
                 <img src="~/30pxGoogle.png" alt="Google Logo" style="width: 20px; height: 20px; margin-left: 5px; margin-top:10px; vertical-align: middle;" />
-            </a>
+            </a> *@
         </div>
     </form>
 </div>
