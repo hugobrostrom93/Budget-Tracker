@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <NameOfLastUsedPublishProfile>C:\Users\Hugo\Desktop\Cloud\BudgetTrackerHugo\BudgetTrackerHugo\Properties\PublishProfiles\BudgetTrackerAppService - Web Deploy.pubxml</NameOfLastUsedPublishProfile>
+    <NameOfLastUsedPublishProfile>C:\Users\Hugo\Desktop\Cloud\BudgetTrackerHugo\BudgetTrackerHugo\.github\workflows\BudgetTrackerHugoCIDC.yml</NameOfLastUsedPublishProfile>
     <ActiveDebugProfile>BudgetTrackerHugo</ActiveDebugProfile>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
