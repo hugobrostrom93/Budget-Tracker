@@ -12,6 +12,7 @@ builder.Services.AddControllersWithViews();
 // Login Authentication
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
 .AddCookie();
+// Comment out code below to enable Google Log in
 //.AddGoogle(options =>
 //{
 //    options.ClientId = builder.Configuration["Authentication:Google:ClientId"] ?? throw new ArgumentNullException("Authentication:Google:ClientId");
@@ -26,13 +27,12 @@ options.UseSqlServer(builder.Configuration.GetConnectionString("DevConnection"))
 
 var app = builder.Build();
 //Licence key for syncfusion
-Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("Ngo9BigBOggjHTQxAR8/V1NAaF5cWWJCf0x1RHxbf1x0ZFRHal5UTnZeUiweQnxTdEFjWH1acXVXQ2BdWU1+Xw==");
+Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("Mgo+DSMBPh8sVXJwS0R+X1pHaV1HQmFJfFdmRGlYfFR0cEUmHVdTRHRbQl9hTX9Qd0FjXXZXdXc=");
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
 
@@ -46,6 +46,5 @@ app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
-//pattern: "{controller=Dashboard}/{action=Index}/{id?}");
 
 app.Run();

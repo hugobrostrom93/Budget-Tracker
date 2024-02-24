@@ -7,7 +7,7 @@
 
 <div class="login-container">
     <img src="~/sbLogo.png" alt="BudgetTracker Logo" />
-    <h2>LogIn to your account US</h2>
+    <h2>LogIn to your account</h2>
     <p>Start traking your economy with <b>SmartBudget</b></p>
     <form asp-action="Login" asp-controller="Account" method="post" asp-antiforgery="true">
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -23,7 +23,8 @@
         </div>
         <div>
             <button type="submit" class="buttonLogInOne">Login</button>
-@*             <a href="@Url.Action("GoogleLogin", "Account")" class="login-btn btn btn-primary">
+                @* Comment out to enable Google Log in  *@
+                @*<a href="@Url.Action("GoogleLogin", "Account")" class="login-btn btn btn-primary">
                 Login with Google
                 <img src="~/30pxGoogle.png" alt="Google Logo" style="width: 20px; height: 20px; margin-left: 5px; margin-top:10px; vertical-align: middle;" />
             </a> *@
@@ -61,13 +62,13 @@
             margin-top: -10px;
             margin-bottom: 40px;
             text-align: center;
-            font-family: 'Inter', sans-serif; /* Set font family */
+            font-family: 'Inter', sans-serif; 
             color: #fff;
         }
 
         .login-container h2 {
             text-align: center;
-            font-family: 'Inter', sans-serif; /* Set font family */
+            font-family: 'Inter', sans-serif; 
             color: #fff;
         }
 
@@ -79,8 +80,8 @@
 
         .login-container label {
             color: #fff;
-            font-family: 'Inter', sans-serif !important; /* Set font family */
-            font-size: 16px; /* Set font size */
+            font-family: 'Inter', sans-serif !important;
+            font-size: 16px; 
         }
 
         .login-container input {
@@ -89,9 +90,9 @@
             margin-bottom: 1rem;
             border: 1px solid #ccc;
             border-radius: 5px;
-            color: #333; /* Set text color */
-            font-family: 'Inter', sans-serif !important; /* Set font family */
-            font-size: 16px; /* Set font size */
+            color: #333; 
+            font-family: 'Inter', sans-serif !important; 
+            font-size: 16px;
         }
 
         .login-container button {
@@ -101,8 +102,8 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            font-family: 'Inter', sans-serif; /* Set font family */
-            font-size: 16px; /* Set font size */
+            font-family: 'Inter', sans-serif; 
+            font-size: 16px; 
         }
 
     .buttonLogInOne {
@@ -124,7 +125,7 @@
         cursor: pointer;
         font-family: 'Inter', sans-serif;
         font-size: 16px;
-        text-decoration: none; /* Remove underline for anchor elements */
+        text-decoration: none; 
         display: inline-block;
         text-align: center;
     }

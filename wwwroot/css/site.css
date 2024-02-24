@@ -28,6 +28,14 @@ body {
     font-size: x-large;
 }
 
+.text-red {
+    color: #dc3545;
+}
+
+.text-green {
+    color: #198754;
+}
+
 /*Button*/
 .btn:focus, .btn:active {
     outline: none !important;

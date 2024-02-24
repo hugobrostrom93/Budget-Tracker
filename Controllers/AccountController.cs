@@ -11,7 +11,7 @@ public class AccountController : Controller
 {
     // Mocked user data
     private const string MockedUsername = "demo";
-    private const string MockedPassword = "pass"; // Note: NEVER hard-code passwords in real applications.
+    private const string MockedPassword = "pass"; 
     public IActionResult Login()
     {
         return View();
@@ -28,35 +28,11 @@ public class AccountController : Controller
         CookieAuthenticationDefaults.AuthenticationScheme);
     }
 
-    [Authorize] // This attribute ensures that only authenticated users can access this action.
+    [Authorize] 
     public IActionResult SecretInfo()
     {
         return View();
     }
-
-    //[HttpPost]
-    //[ValidateAntiForgeryToken] // This ensures that the form is submitted with a valid anti-forgery token to prevent CSRF attacks.
-    //public async Task<IActionResult> LoginAsync(LoginViewModel model)
-    //{
-    //    // Check model validators
-    //    if (!ModelState.IsValid)
-    //    {
-    //        return View(model);
-    //    }
-    //    // Mocked user verification
-    //    if (model.Username == MockedUsername && model.Password == MockedPassword)
-    //    {
-    //        // Set up the session/cookie for the authenticated user.
-    //        var claims = new[] { new Claim(ClaimTypes.Name, model.Username) };
-    //        var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
-    //        var principal = new ClaimsPrincipal(identity);
-    //        await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal);
-    //        // Normally, here you'd set up the session/cookie for the authenticated user.
-    //        return RedirectToAction("Index", "Dashboard"); // Redirect to a secure area of your application.
-    //    }
-    //    ModelState.AddModelError(string.Empty, "Invalid login attempt."); // Generic error message for security reasons.
-    //    return View(model);
-    //}
 
     [HttpPost]
     [ValidateAntiForgeryToken]
@@ -83,6 +59,8 @@ public class AccountController : Controller
         ModelState.AddModelError(string.Empty, "Invalid login attempt."); // Generic error message for security reasons.
         return View(model);
     }
+
+    // Comment out code below to enable Google Log in
 
     //public IActionResult GoogleLogin()
     //{

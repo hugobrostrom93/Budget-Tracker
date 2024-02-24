@@ -3,15 +3,13 @@
     ViewData["isDashboard"] = true;
 }
 
-@*Summary Widgets*@
-
 <div class="row centerDashWidget fw-bold" mb-4>
     <h2 class="fw-bold centerTextWidget mb-4 moveUp">History Last 30 Days</h2>
     <div class="col-md-3">
         <div class="d-flex flex-row widget summary income">
             <div class="d-flex flex-column m-auto py-3">
                 <span class="lead centerTextWidget">Total Income</span>
-                <h1 class="display-6 fw-bold">@ViewBag.TotalIncome</h1>
+                <h1 class="display-6 fw-bold text-green">@ViewBag.TotalIncome</h1>
             </div>
         </div>
     </div>
@@ -19,7 +17,7 @@
         <div class="d-flex flex-row widget summary expense">
             <div class="d-flex flex-column m-auto py-3">
                 <span class="lead centerTextWidget">Total Expense</span>
-                <h1 class="display-6 fw-bold">@ViewBag.TotalExpense</h1>
+                <h1 class="display-6 fw-bold text-red">@ViewBag.TotalExpense</h1>
             </div>
         </div>
     </div>
@@ -40,6 +38,7 @@
             <div class="p-4">
                 <h5 class="fw-bold centerTextWidget">Expense by Category</h5>
             </div>
+            @*Syncfusion*@
             <ejs-accumulationchart id="donutchart" enableSmartLabels>
                 <e-accumulation-series-collection>
                     <e-accumulation-series dataSource="@ViewBag.DonutChartData" xName="categoryTitleWithIcon" yName="amount" innerRadius="60%" legendShape="Circle">
@@ -59,6 +58,7 @@
             <div class="p-4">
                 <h5 class="fw-bold centerTextWidget">Income by Category</h5>
             </div>
+            @*Syncfusion*@
             <ejs-accumulationchart id="donutchartTwo" enableSmartLabels>
                 <e-accumulation-series-collection>
                     <e-accumulation-series dataSource="@ViewBag.DonutChartDataTwo" xName="categoryTitleWithIcon" yName="amount" innerRadius="60%" legendShape="Circle">
@@ -79,6 +79,7 @@
                 <h5 class="fw-bold centerTextWidget">Recent Transactions</h5>
             </div>
             <div class="px-4 pb-4">
+                @*Syncfusion*@
                 <ejs-grid id="GridTransactions" dataSource="@ViewBag.RecentTransactions" gridLines="None" allowSorting="true" allowPaging="true">
                     <e-grid-pagesettings pageSize="7"></e-grid-pagesettings>
                     <e-grid-columns>
